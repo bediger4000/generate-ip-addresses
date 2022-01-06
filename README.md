@@ -13,3 +13,7 @@ Zero-prefixed numbers, such as 01 and 065, are not allowed, except for 0 itself.
 For example, given "2542540123", you should return ['254.25.40.123', '254.254.0.123'].
 
 ## Analysis
+
+The problem statement is too loose.
+The example clarifies that you leave the string of digit characters
+in the order given.
