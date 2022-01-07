@@ -35,5 +35,37 @@ The semi-plausible IP-address generation is facilitated by using the input
 digits in the order given.
 Validating the semi-plausible IP-address candidates is harder than generating them.
 
-You could do this by backtracking, too.
-The same 
+I think that there isn't a canonical algorithm for this.
+I chose to have the plausible-IP-address generation avoid 2 '.' in a row,
+so I didn't have to check that a plausible-IP-address has '..' as a substring.
+There's a lot of choices to be made:
+make the plausible-IP-addresses more plausible while generating them,
+or validate for entire categories of incorrect formatting.
+
+## Build and run
+
+```sh
+$ go build plausible.go
+$ ./plausible 2542540123
+"254.254.0.123"
+"254.25.40.123"
+```
+
+## Interview Analysis
+
+This just might qualify as "[Medium]",
+although the interviewer would have to give candidates a fair amount of time:
+there's a lot of fiddly programming.
+That said, this problem entails a decent amount of programming.
+Since no obvious, canonical algorithm exists for this,
+the interviewer has to be prepared for exotic solutions,
+and flailing from some candidates.
+
+Candidates could give themselves a boost by talking through their design choices:
+this would give a decent interviewer some insight
+into how much the candidate knows,
+and how the candidate approaches problems.
+
+This also strikes me as a good problem for the candidate to propose
+various test cases: "9999" should only cause "9.9.9.9" as an IP address.
+"22222222" generates at least 19 different IP addresses.
